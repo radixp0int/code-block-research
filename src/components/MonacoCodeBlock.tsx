@@ -1,41 +1,31 @@
-import React, { useEffect } from "react";
-import { Editor, Monaco } from "@monaco-editor/react";
+import { useEffect } from "react";
+import { Editor } from "@monaco-editor/react";
 
-export const MonacoCodeBlock = () => {
-  function handleEditorChange(value, event) {
-    console.log('Here is the current model value:', value);
+const MonacoCodeBlock = ({ code }: { code: string }) => {
+  function handleEditorChange(value: unknown) {
+    console.log("Here is the current model value:", value);
   }
 
   useEffect(() => {
-    import('monaco-editor/esm/vs/editor/editor.api').then(monaco => {
-      monaco.editor.setTheme('vs-dark');
+    import("monaco-editor/esm/vs/editor/editor.api").then((monaco) => {
+      monaco.editor.setTheme("vs-dark");
     });
   }, []);
 
   return (
-    <Editor
-      height="500px"
-      width={'550px'}
-      defaultLanguage="javascript"
-      theme="vs-dark"
-      loading
-      defaultValue={`
-import './styles.css'
-
-function App() {
-
-    return (
-        <>
-            <p className="read-the-docs">
-                Testing
-            </p>
-        </>
-    )
-}
-
-export default App
-        `}
-      onChange={handleEditorChange}
-    />
+    <>
+      <h1>Monaco Editor</h1>
+      <Editor
+        height="500px"
+        width={"550px"}
+        defaultLanguage="javascript"
+        theme="vs-dark"
+        loading
+        defaultValue={code}
+        onChange={handleEditorChange}
+      />
+    </>
   );
 };
+
+export default MonacoCodeBlock;

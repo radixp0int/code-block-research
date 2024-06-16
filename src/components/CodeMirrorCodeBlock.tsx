@@ -37,7 +37,10 @@ const CodeMirrorCodeBlock = ({ initialValue }: { initialValue: string }) => {
   }, [initialValue]);
 
   return (
-    <div ref={editorRef} style={{ width: "500px" }}></div>
+    <>
+      <h1>Code Mirror</h1>
+      <div ref={editorRef} style={{ width: "500px" }}></div>
+    </>
   );
 };
 
