@@ -17,7 +17,7 @@ const MonacoCodeBlock = ({ code }: { code: string }) => {
       <h1>Monaco Editor</h1>
       <Editor
         height="500px"
-        width={"550px"}
+        width="750px"
         defaultLanguage="javascript"
         theme="vs-dark"
         loading

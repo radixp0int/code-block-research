@@ -1,9 +1,5 @@
 import {
   Sandpack,
-  // SandpackProvider,
-  // SandpackLayout,
-  // SandpackCodeEditor,
-  // SandpackPreview,
 } from "@codesandbox/sandpack-react";
 
 const SandBoxCodeBlock = ({ code }: { code: string }) => {

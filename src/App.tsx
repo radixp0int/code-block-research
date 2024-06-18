@@ -1,23 +1,29 @@
 import "./App.css";
 import CodeMirrorCodeBlock from "./components/CodeMirrorCodeBlock";
 import MonacoCodeBlock from "./components/MonacoCodeBlock";
+import PrismCodeBlock from "./components/PrismCodeBlock";
 import SandBoxCodeBlock from "./components/SandBoxCodeBlock";
+import { monacoEditorCodeSample, codeMirrorSample, sandBoxCodeSample, prismCodeSample } from "./components/code-samples";
 
 function App() {
-  const code = `import './styles.css'\n\nfunction App() {\n  return (\n    <>\n      <p className="read-the-docs">\n        Testing\n      </p>\n    </>\n  )\n}\n\nexport default App`;
+
   return (
     <div className="gap">
 
       <div>
-        <MonacoCodeBlock code={code} />
+        <MonacoCodeBlock code={monacoEditorCodeSample} />
       </div>
 
       <div>
-        <CodeMirrorCodeBlock initialValue={code} />
+        <CodeMirrorCodeBlock initialValue={codeMirrorSample} />
       </div>
 
       <div>
-        <SandBoxCodeBlock code={code} />
+        <SandBoxCodeBlock code={sandBoxCodeSample} />
+      </div>
+
+      <div>
+        <PrismCodeBlock code={prismCodeSample} />
       </div>
     </div>
   );
